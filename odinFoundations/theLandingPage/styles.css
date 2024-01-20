@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+
+}
+.darkBGdiv{
+    font-size: 0.8em;
+    
+    background-color: #1F2937 ;
+}
+.header{
+    padding: 2em;
+    color: white;
+    justify-content: space-around;
+}
+.header h1{
+    font-weight: bolder;
+}
+.links{
+    gap: 1em;
+    flex-shrink: 2;
+    align-items: center;
+    flex-wrap: nowrap;
+
+}
+
+
+.idkWhatToCallThis{
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 5em;
+    width: 100%;
+    border: 3px solid yellow;
+    color: white;
+    font-family:sans-serif;
+    gap: 3em;
+}
+.idkWhatToCallThis div{
+    max-width: 25em;
+    justify-content: center;
+    border: 2px solid red
+}
+.idkWhatToCallThis h1{
+    font-size: 3em;
+    font-weight: bolder;
+}
+.idkWhatToCallThis p{
+    font-weight: 200;
+    margin-top: 0.3em;
+    color: #E5E7EB ;
+}
+.idkWhatToCallThis img{
+    border: 3px solid white;
+    width: 25em;
+    height: 20em;
+    border-radius: 0.5em;
+}
+
+.idkWhatToCallThis button{
+    margin-top: 0.3em;
+    align-self: baseline;
+    padding: 0.3em;
+    width: 8em;
+    color: white;
+    border: none;
+    border-radius: 0.2em;
+    background-color: rgb(96, 96, 218);
+
+}
+
+
+
+
+
+.quoteSection{
+    background-color: #E5E7EB ;
+}
+
+.randoninfodivs img{
+    width: 10em;
+}
+
+.callToAction{
+    background-color: #3882F6 ;
+}

@@ -13,7 +13,6 @@
 }
 .darkBGdiv{
     font-size: 0.8em;
-    
     background-color: #1F2937 ;
 }
 .header{
@@ -22,11 +21,12 @@
     justify-content: space-around;
 }
 .header h1{
+    flex-shrink: 1;
     font-weight: bolder;
 }
 .links{
-    gap: 1em;
-    flex-shrink: 2;
+    gap: 0.5em;
+    flex-shrink: 3;
     align-items: center;
     flex-wrap: nowrap;
 
@@ -37,8 +37,9 @@
     justify-content: center;
     flex-wrap: wrap;
     margin-top: 5em;
+    margin-bottom: 4em;
+
     width: 100%;
-    border: 3px solid yellow;
     color: white;
     font-family:sans-serif;
     gap: 3em;
@@ -46,7 +47,6 @@
 .idkWhatToCallThis div{
     max-width: 25em;
     justify-content: center;
-    border: 2px solid red
 }
 .idkWhatToCallThis h1{
     font-size: 3em;
@@ -58,9 +58,7 @@
     color: #E5E7EB ;
 }
 .idkWhatToCallThis img{
-    border: 3px solid white;
-    width: 25em;
-    height: 20em;
+    max-width:20em;
     border-radius: 0.5em;
 }
 
@@ -78,16 +76,33 @@
 
 
 
+.randominfo{
+    align-items: center;
+    margin: 1em;
+}
+
+.randoninfodivs{
+    flex-wrap: wrap;
+    gap: 1em;
+}
+.randoninfodivs div{
+    
+    max-width: 10em;
+    font-size: 1em;
+    text-align: center;
+}
+
+.randoninfodivs img{
+    max-width: 8em;
+    border-radius: 0.5em;
+}
 
 
 .quoteSection{
     background-color: #E5E7EB ;
 }
 
-.randoninfodivs img{
-    width: 10em;
-}
-
 .callToAction{
     background-color: #3882F6 ;
 }
+

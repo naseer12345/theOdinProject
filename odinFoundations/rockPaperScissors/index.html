@@ -7,26 +7,27 @@
 </head>
 <body>
 
-    <h1>hello</h1>
+    <h1>Hey! please the console to check the results. Refresh to play a new round.</h1>
 
 
 
     <script>
 
 function playRound(playerSelection, computerSelection) {
+    console.log("computer's choice is", computerSelection)
     if(playerSelection == "rock" && computerSelection == "scissors" ){
         console.log("player wins")
     }else if (computerSelection === "rock" && playerSelection === "scissors"){
         console.log("computer wins")
-    }else if( playerSelection == "papper" && computerSelection == "scissors" ){
+    }else if( playerSelection === "papper" && computerSelection === "scissors" ){
         console.log("computer wins")
 
-    }else if( playerSelection == "scissors" && computerSelection == "papper" ){
+    }else if( playerSelection === "scissors" && computerSelection === "papper" ){
         console.log("player wins")
-    }else if( playerSelection == "rock" && computerSelection == "papper" ){
+    }else if( playerSelection === "rock" && computerSelection === "papper" ){
         console.log("computer wins")
 
-    }else if( playerSelection == "papper" && computerSelection == "rock" ){
+    }else if( playerSelection === "papper" && computerSelection === "rock" ){
         console.log("player wins")
     }else{
         console.log("It was a draw, Try again please")
@@ -41,10 +42,9 @@ function playRound(playerSelection, computerSelection) {
         return randomChoices[randomChoice]
     }
 
-    console.log("Computer's choice was",getComputerChoice())
 
 
-    const playerSelection = "rock";
+    const playerSelection = "papper";
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
 

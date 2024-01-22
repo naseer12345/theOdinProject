@@ -116,13 +116,32 @@
 }
 
 .callToAction{
-    max-width: 60em;
+    padding: 3em;
+    max-width: 70%;
+    border-radius: 0.5em;
+
+
+    margin: 0 auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
     background-color: #3882F6 ;
-    align-self: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 .callToAction div {
-    border: 1px solid black;
-    font-size: 1em;
-    max-width: 26em;
+    font-size: 1.5em;
+    max-width: 19em;
+    color: #E5E7EB;
+}
+
+.callToAction button{
+    padding: 0.5em;
+    width: 7em;
+    height: 2em;
+    align-self: center;
+    border-radius: 0.4em;
+    border: none;
+    background-color:#E5E7EB;
+    font-size: 1.3em;
 }
 

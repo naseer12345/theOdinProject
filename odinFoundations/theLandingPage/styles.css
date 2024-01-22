@@ -1,6 +1,8 @@
 *{
     margin: 0;
 }
+
+
 .flex-row{
     display: flex;
     flex-direction: row;
@@ -99,10 +101,28 @@
 
 
 .quoteSection{
+    align-items: center;
     background-color: #E5E7EB ;
+    padding: 4em;
+    flex-wrap: wrap;
+}
+.quoteSection p{
+    font-style: italic;
+    font-size: 2em;
+    max-width: 20em;
+}
+.quoteSection h1{
+    align-self: flex-end;
 }
 
 .callToAction{
+    max-width: 60em;
     background-color: #3882F6 ;
+    align-self: center;
+}
+.callToAction div {
+    border: 1px solid black;
+    font-size: 1em;
+    max-width: 26em;
 }
 

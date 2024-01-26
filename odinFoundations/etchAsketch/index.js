@@ -7,14 +7,15 @@ for (i; i < 2000; i++) {
     sketchDiv.appendChild(divs);
 }
 
-
+let eraserBTN = document.querySelector(".eraserBTN")
 let drawing = false;
 let wantToErase = false;
 let erasing = false;
 function eraser(){
     wantToErase = true;
-    // turnary operator: if want to erase is true then the button text should be saying erasing
-    // else it should say eraser.
+    
+   eraserBTN.textContent = "Eraser on"
+
 }
 
 function  mouseEnter(){
@@ -38,10 +39,13 @@ function mouseDown(){
         
     
 }
-
 function changeStates(){
     drawing = false;
     erasing= false;
+    wantToErase = false;
+    eraserBTN.textContent = "Eraser off"
+
+    
 }
 const divsOfParentDiv = sketchDiv.querySelectorAll("div")
 console.log(divsOfParentDiv)

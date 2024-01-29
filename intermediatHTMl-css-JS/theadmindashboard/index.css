@@ -14,10 +14,7 @@ body{
 
 
 
-.dashboard img{
-    max-width: 1.4rem;
-    border: 1px solid yellow;
-}
+
 .dashboard{
     background-color: brown;
     grid-row-start: 1;
@@ -25,7 +22,15 @@ body{
     height: 100%;
     
 }
-
+.dashboard img{
+    max-width: 1.4rem;
+    justify-self: end;
+}
+.dashboard h1{
+    max-width: fit-content;
+    margin: 1rem auto;
+    
+}
 .nav ,.settingoptions {
     width: 100%;
     display: inline-grid;
@@ -40,16 +45,6 @@ div{
 }
 
 
-.searcsection{
-    
-    grid-column-start: 2;
-    grid-column-end: 5;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    
-    max-height: 12rem;
-    background-color: yellow;
-}
 
 .middlesection{
     background-color: antiquewhite;
@@ -57,4 +52,45 @@ div{
     grid-row-end: 6 ;
     grid-column-start: 2;
     grid-column-end: 5;
+}
+
+
+.searcsection{
+    
+    grid-column-start: 2;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: inline-grid;
+    grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
+    gap: min(30px, 1rem);
+    align-items: center;
+    background-color: yellow;
+}
+
+.searcsection img {
+    width: max(2rem);
+    justify-self: end;
+}
+
+.searchbar{
+    min-width: 5rem;
+min-height: 2rem;
+}
+
+.child2{
+    justify-self: center;
+}
+.child3{
+    justify-self: start;
+
+}
+.child1{
+    justify-self: end;
+}
+
+.dummy{
+    min-width: 2rem;
+    height: 1rem;
+    background-color: black;
 }

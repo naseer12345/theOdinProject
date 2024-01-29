@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array method practice</title>
+</head>
+<body>
+    <script>
+// i did it because i was bored, no explanation, sorry.
+        const text = Array.from("hey, what your name")
+
+        console.log(text)
+
+
+        let reversedText = []
+        text.forEach((items )=>{
+            
+            reversedText.unshift(items)
+        })
+
+        console.log(reversedText)
+       const stringg =  reversedText.toString()
+
+
+
+        reversedText.forEach((value, index)=>{
+            const firstArrIndex = text.length -1
+            if(text[firstArrIndex - index] !== value){
+                console.log("its not same")
+                console.log(value)
+                console.log(text[firstArrIndex - index])
+            }else{
+                console.log("its same")
+                console.log(value)
+                console.log(text[firstArrIndex - index])
+            }
+        })
+
+
+
+    </script>
+</body>
+</html>

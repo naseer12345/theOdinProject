@@ -46,6 +46,7 @@ function getvalue(event) {
     book.show()
     document.getElementById("my-form").reset();
 
+    console.log(arr)
 
 }
 

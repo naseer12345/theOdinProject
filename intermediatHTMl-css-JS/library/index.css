@@ -1,4 +1,11 @@
+*{
+    color: white;
+}
 
+
+body{
+    background-color: rgb(148, 138, 138);
+}
 .addBook{
     border: 1px solid black;
     height: 10rem;

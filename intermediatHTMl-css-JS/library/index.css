@@ -1,0 +1,17 @@
+
+.addBook{
+    border: 1px solid black;
+    height: 10rem;
+    width: fit-content;
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+
+
+.displayBooks{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}

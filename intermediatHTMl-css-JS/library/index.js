@@ -17,9 +17,7 @@ function Book(bookName, author, readornot, pages) {
 
         deletebtn.textContent = "Delete this item";
         deletebtn.addEventListener("click", () => {
-            // Remove the corresponding book from the array
             arr = arr.filter(book => book !== this);
-            // Remove the corresponding div from the DOM
             div.remove();
         });
 

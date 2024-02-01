@@ -18,9 +18,8 @@
 
 
 let nextPlayer = true;
-let defaultAr = ["","","","","","","","",""]
+let defaultAr = [1,1,1,1,1,1,1,1,1]
 
-console.log(defaultAr)
 
 
 
@@ -28,25 +27,24 @@ console.log(defaultAr)
 
 let pointerForLeftToRightCheck = 0;
 function validatingFromleftToRight (){
-if (defaultAr[pointerForLeftToRightCheck] !== defaultAr[pointerForLeftToRightCheck+1] ||  defaultAr[pointerForLeftToRightCheck+1] !== defaultAr[pointerForLeftToRightCheck+2]
-    ) {
-    
-  return true
-    
-    
-} else{
-    if(pointerForLeftToRightCheck<=5){
-        pointerForLeftToRightCheck = pointerForLeftToRightCheck+3;
+if (defaultAr[pointerForLeftToRightCheck] == defaultAr[pointerForLeftToRightCheck+1] ||  defaultAr[pointerForLeftToRightCheck+1] == defaultAr[pointerForLeftToRightCheck+2]) {
+   function test(){
+    if( defaultAr[pointerForLeftToRightCheck] !== 1 ||  defaultAr[pointerForLeftToRightCheck+1] !== 1 ){
         
-        validatingFromleftToRight()
-           
-        }else{
-            return false
+        return true
+    }else{
+        if(pointerForLeftToRightCheck<=5){
+            pointerForLeftToRightCheck = pointerForLeftToRightCheck+3;
+            test()
+               
+            }else{
+             
+                return false
+            }
         }
-    
-};
-
+}}; 
 }
+
 
 
 
@@ -101,7 +99,7 @@ mainGameBoxChildren.forEach(div => {
         
         if(div.textContent == false){
             nextPlayer ? (div.textContent = "X" , defaultAr[div.getAttribute("data")] = "X", nextPlayer = false) : (div.textContent = "O", defaultAr[div.getAttribute("data")] = "O" , nextPlayer = true);
-           console.log(validatingFromleftToRight())
+           console.log(pointerForLeftToRightCheck)
             if (validatingFromleftToRight()){
                 nextPlayer? console.log("0 wins") : console.log("x wins")
             }

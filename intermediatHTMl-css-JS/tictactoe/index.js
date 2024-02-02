@@ -13,8 +13,7 @@
 //  at the end if defaultAray is full, run all functions, if all the funciton are false then retun game draw.
 // 1 for x and 0 for o  
 
-
-
+//this is i think dynamic programing that im trying to do, try this again next time, watching tutorial is not gonna do anything
 
 
 let nextPlayer = true;

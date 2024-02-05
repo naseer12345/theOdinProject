@@ -14,3 +14,67 @@
 // we need a class for creating projects or to do list, i think the todo should be the main class
 // the project will be the child class. 
 // we need a static button to create for each project and todos
+
+// we need one function to add todos and projects
+// we need one function for deleting the todos and projects.
+// we need another function to map all the children in the todos and projects div, it sould return this const
+// and should be used in the delete div 
+
+
+
+let projectDiv = document.querySelector(".projects")
+let todosDiv = document.querySelector(".todos") 
+let addTodoBtn = document.querySelector(".addTodo")
+let addProjects = document.querySelector(".addProjects")
+
+let listOfProjects = []
+
+
+addTodoBtn.addEventListener("click", ()=>{
+    console.log("add todoss bro ")
+})
+addProjects.addEventListener("click" , ()=>{
+ const project = new CreateProjects("test", "description test" , '3 days')
+ listOfProjects.push(project)
+ console.log(listOfProjects)
+})
+
+
+
+
+
+function deleteDiv(){
+    console.log(this)
+}
+
+function addTodos (text){
+    const h = document.createElement("h1")
+    const p = document.createElement("p")
+    const button = document.createElement("button")
+    button.textContent = "Delete this todo"
+    h.textContent = text
+    p.textContent = text
+    button.addEventListener("click", deleteDiv)
+    todosDiv.append(h,p,button)
+}
+
+
+
+addTodos("hsle kj")
+
+
+
+
+
+
+function CreateTasks(title, description,dueDate ){
+    this.title = title;
+    this.description = description;
+    this.dueDate = dueDate;
+
+}
+
+function CreateProjects(title){
+    const {description, dueDate} = CreateTasks(title)
+    this.title = title    
+}

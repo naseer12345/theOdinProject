@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo list</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: flex-start;
+        }
+        .projects{
+            width: 20%;
+            height: 100%;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .projects button{
+            align-self: end;
+        }
+
+
+
+        .todos{
+            width: 80%;
+            height: 100%;
+        }
+
+
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="projects">
+            <h1>this is projet1</h1>
+            <button>delete project  </button>
+        </div>
+        <div class="todos">
+            <h1>task1</h1>
+        <p>here is the discription</p>
+        <button>to delee</button>
+        </div>
+        
+        
+    </div>
+    <script src="index.js"> </script>
+</body>
+</html>

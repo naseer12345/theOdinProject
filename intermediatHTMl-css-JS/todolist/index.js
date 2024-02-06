@@ -1,24 +1,3 @@
-// list of projects, every project will have different todos
-//         there should be a default project, you can either make one not deleteable or 
-//         you can make a function if there is no projects than 1 then we will be able to delete that.
-
-// what you can do is to have different arrays for different projects. by clicking the project we will map
-// inside the arrays or object and printout every data from it to the home screan
-
-
-// what we need now? we need a div on the left to show the current projects, also a button to make new projects
-// a home screen will be on the left, by clicking, it should display the project todos and then we will be able
-// to add new todos to that project as well.
-
-
-// we need a class for creating projects or to do list, i think the todo should be the main class
-// the project will be the child class. 
-// we need a static button to create for each project and todos
-
-// we need one function to add todos and projects
-// we need one function for deleting the todos and projects.
-// we need another function to map all the children in the todos and projects div, it sould return this const
-// and should be used in the delete div 
 
 
 
@@ -33,6 +12,21 @@
 
 
 
+
+const inputTitle = document.querySelector('#title')
+const inputDescription = document.querySelector('#description')
+const inputDueDate = document.querySelector('#dueDate')
+
+
+
+
+
+
+
+
+// main objictive it to put making array for each of the createtasks in their own object
+// so when clicking the obj, we can call its array and print all of the insde divs
+// no matter how many projects we have, the contructor wwill make new arr for every obj
 
 
 // i think i need to have new array for every project, by creating a project i need to make new array
@@ -43,12 +37,14 @@ let todosDiv = document.querySelector(".todos")
 let addTodoBtn = document.querySelector(".addTodo")
 let addProjectsBtn = document.querySelector(".addProjects")
 
-let listOfProjects = []
+// let listOfProjects = []
 let listOfTodos = []
 
 
 addTodoBtn.addEventListener("click", ()=>{
     console.log("add todoss bro ")
+    console.log(inputDescription.value)
+    
 })
 addProjectsBtn.addEventListener("click" , ()=>{
  const project = new CreateProjects("test", "description test" , '3 days')
@@ -57,24 +53,28 @@ addProjectsBtn.addEventListener("click" , ()=>{
 })
 
 // this function is for deleting elements inside the arrays of both i thing
-function testing (objToDelete){
-    listOfTodos =  listOfTodos.filter(something => something !==  objToDelete)
+// function testing (objToDelete){
+//     listOfTodos =  listOfTodos.filter(something => something !==  objToDelete)
 
-}
+// }
 
 
 function deleteTodoDiv(divToDelete){
+    console.log(listOfTodos)
         listOfTodos =  listOfTodos.filter(something => something !==  divToDelete)
         console.log(divToDelete)
         divToDelete.remove()
         console.log(listOfTodos)
 
     
-    // now here you can delete that same div from the array, you need to add it first obvoisuly
+   
 }
 
+
+// we will be calling this when we click on addTodo btn, its job is to just create the task. DONT SCANN, DO NOTHING ELSE
 function addTodos (title,description,date){
     const taskDiv = document.createElement('div')
+
     const h = document.createElement("h1")
     const p = document.createElement("p")
     const dueDate = document.createElement("p")
@@ -88,10 +88,10 @@ function addTodos (title,description,date){
     todosDiv.appendChild(taskDiv)
     listOfTodos.push(taskDiv)
 
+    return
    
    
 }
-
 function addProjects(title, description, date){
     const h = document.createElement("h1")
     const p = document.createElement("p")
@@ -123,8 +123,9 @@ function CreateTasks(title, description,duedate ){
 
 }
 
+// objs should have array that will contain all the taks divs. so when we click on every projects div we will scann the objects array t print the divs 
 
-// fix this issue or just make a single class, just put the name, or inherit just duedate from createTasks
+// this obj inhereting bug
 function CreateProjects(title, projectdescription, dueDate){
     const {description, duedate} = new CreateTasks(title, this.projectdescription , this.dueDate)
     this.title = title 
@@ -135,7 +136,7 @@ function CreateProjects(title, projectdescription, dueDate){
 }
 
 
-const khan = new CreateTasks("blak","nothing to add", "4")
+const khan = new CreateTasks("blah blah","nothing to add", "4")
 const khan2 = new CreateTasks("a project name" , "project description" , "34")
 const khan3 = new CreateTasks("a project name 3" , "project description 3" , "3")
 
@@ -143,10 +144,12 @@ khan.addTodo()
 khan2.addTodo()
 khan3.addTodo()
 
-
+// console.log(listOfTodos[0].outerText)
 
 
 // listOfTodos.map(obj=>{
     
 //     console.log(obj.title, obj.description , obj.duedate)
 // })
+
+

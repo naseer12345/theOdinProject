@@ -22,59 +22,131 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+// i think i need to have new array for every project, by creating a project i need to make new array
+// by clicking on any objects div i will then call that array, map through it and print what every its in it to the div, fuckkkkkk.
+
 let projectDiv = document.querySelector(".projects")
 let todosDiv = document.querySelector(".todos") 
 let addTodoBtn = document.querySelector(".addTodo")
-let addProjects = document.querySelector(".addProjects")
+let addProjectsBtn = document.querySelector(".addProjects")
 
 let listOfProjects = []
+let listOfTodos = []
 
 
 addTodoBtn.addEventListener("click", ()=>{
     console.log("add todoss bro ")
 })
-addProjects.addEventListener("click" , ()=>{
+addProjectsBtn.addEventListener("click" , ()=>{
  const project = new CreateProjects("test", "description test" , '3 days')
  listOfProjects.push(project)
  console.log(listOfProjects)
 })
 
+// this function is for deleting elements inside the arrays of both i thing
+function testing (objToDelete){
+    listOfTodos =  listOfTodos.filter(something => something !==  objToDelete)
 
-
-
-
-function deleteDiv(){
-    console.log(this)
 }
 
-function addTodos (text){
+
+function deleteTodoDiv(divToDelete){
+        listOfTodos =  listOfTodos.filter(something => something !==  divToDelete)
+        console.log(divToDelete)
+        divToDelete.remove()
+        console.log(listOfTodos)
+
+    
+    // now here you can delete that same div from the array, you need to add it first obvoisuly
+}
+
+function addTodos (title,description,date){
+    const taskDiv = document.createElement('div')
     const h = document.createElement("h1")
     const p = document.createElement("p")
+    const dueDate = document.createElement("p")
     const button = document.createElement("button")
     button.textContent = "Delete this todo"
-    h.textContent = text
-    p.textContent = text
+    h.textContent = title;
+    p.textContent = description;
+    dueDate.textContent = date
+    button.addEventListener("click", () => deleteTodoDiv(taskDiv))
+    taskDiv.append(h,p,dueDate,button)
+    todosDiv.appendChild(taskDiv)
+    listOfTodos.push(taskDiv)
+
+   
+   
+}
+
+function addProjects(title, description, date){
+    const h = document.createElement("h1")
+    const p = document.createElement("p")
+    const dueDate = document.createElement("p")
+    const button = document.createElement("button")
+    button.textContent = "Delete this todo"
+    h.textContent = title;
+    p.textContent = description;
+    dueDate.textContent = date
     button.addEventListener("click", deleteDiv)
-    todosDiv.append(h,p,button)
+    todosDiv.append(h,p,dueDate,button)
+
 }
 
 
 
-addTodos("hsle kj")
 
 
 
 
 
-
-function CreateTasks(title, description,dueDate ){
+function CreateTasks(title, description,duedate ){
     this.title = title;
     this.description = description;
-    this.dueDate = dueDate;
+    this.duedate = duedate;
+    this.addTodo = function(){
+        addTodos(title, description,duedate)
+    }
 
 }
 
-function CreateProjects(title){
-    const {description, dueDate} = CreateTasks(title)
-    this.title = title    
+
+// fix this issue or just make a single class, just put the name, or inherit just duedate from createTasks
+function CreateProjects(title, projectdescription, dueDate){
+    const {description, duedate} = new CreateTasks(title, this.projectdescription , this.dueDate)
+    this.title = title 
+
+    this.addProject = function(){
+        addProjects(title, description,duedate)
+    }
 }
+
+
+const khan = new CreateTasks("blak","nothing to add", "4")
+const khan2 = new CreateTasks("a project name" , "project description" , "34")
+const khan3 = new CreateTasks("a project name 3" , "project description 3" , "3")
+
+khan.addTodo()
+khan2.addTodo()
+khan3.addTodo()
+
+
+
+
+// listOfTodos.map(obj=>{
+    
+//     console.log(obj.title, obj.description , obj.duedate)
+// })

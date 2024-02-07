@@ -1,11 +1,10 @@
-// new objective, try the program and fix the bug
+// code is little unorganized, sorry. im feeling sleepy now.
+
+alert("first create a project, click on that project and add todo.")
+alert("you can make unlimited projects and umlimited todos in them")
 
 
 
-// everything is working fine i guess, now the objective is how we wwill add new todos for each project. 
-// in the addtodobutton, i need to reffer to the projects obj so it will add the data into that object.
-// assign a false value to every new project obj created, when we click on that objects div and it should first print every thing in it on the div the make the value, 
-// true, first it should make other object's values false. when its true we can we can add the new todo in that object's array 
 let projectDiv = document.querySelector(".projects")
 let todosDiv = document.querySelector(".todos") 
 let addTodoBtn = document.querySelector(".addTodo")
@@ -22,13 +21,15 @@ const inputTitle = document.querySelector('#title')
 const inputDescription = document.querySelector('#description')
 const inputDueDate = document.querySelector('#dueDate')
 addTodoBtn.addEventListener("click", ()=>{
-    listOfProjectObjs.map((item)=>{
-        if(item.state){
-            item.todosForThisObj.addNewTodo(inputTitle.value,inputDescription.value,inputDueDate.value)
-        }else{
-            alert("please select a project then the fucking todo")
+    listOfProjectObjs.forEach((item) => {
+        if (item.state) {
+            item.todosForThisObj.addNewTodo(inputTitle.value, inputDescription.value, inputDueDate.value);
+            console.log(item);
+        } else if(listOfProjectObjs.every(item => item.state === false)) {
+            alert("please select a project then the todo");
         }
-    })
+    });
+    
     
     inputTitle.value = ''
     inputDescription.value = ''
@@ -46,12 +47,12 @@ function addProjects(title, calledObj){
     h.textContent = title;
     button.addEventListener("click", ()=>{deleteProject(div)})
     // this event is just to check which project div we clicked on so then we can add teh todo in new todos in obj that state is true 
-    // i can do in outside fucntion, but man fuck it, not now. when i get chance i will put it out side, now just complete this shitty project
+    // i can put this in outside fucntion, but man fuck it, not now. when i get chance i will put it out side, now just complete this shitty project
     div.addEventListener('click', ()=>{
 
 
         const currentDivsInTodoDiv = document.querySelectorAll(".todos div" )
-        // now we gonna remove these divs
+        // now we gonna remove all the current divs
         currentDivsInTodoDiv.forEach((item) =>{
             item.remove()
         })
@@ -64,7 +65,12 @@ function addProjects(title, calledObj){
                 item.state = false
             }
             calledObj.state = true
-
+            const addToTodoDiv = document.querySelector(".todos")
+            // now we gonna add all of the calledobj divs inside it 
+            calledObj.todosForThisObj.array.map((item) =>{
+                addToTodoDiv.appendChild(item)
+            })
+            
 
            
 
@@ -139,9 +145,7 @@ function CreateProjects(title){
     listOfProjectObjs.push(this)
 }
 
-const test = new CreateProjects("test")
-test.addProject()
-// console.log(test.todosForThisObj.addNewTodo(23,32,32))
+
 
 
 
@@ -183,6 +187,8 @@ addProjectsBtn.addEventListener("click" , ()=>{
     const inputProjectDescription = document.querySelector("#inputPorjectDescription")
     const project = new CreateProjects(inputProjectDescription.value)
     project.addProject()
+    
+    console.log(project)
     inputProjectDescription.value= ''
 
     
@@ -191,7 +197,7 @@ addProjectsBtn.addEventListener("click" , ()=>{
 
 
    
-   
+       
   
    
 

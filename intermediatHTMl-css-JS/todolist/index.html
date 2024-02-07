@@ -25,12 +25,15 @@
         .projects button{
             align-self: end;
         }
-
+        
 
 
         .todos{
             width: 80%;
             height: 100%;
+        }
+        div{
+            border: 1px solid black;
         }
 
 
@@ -47,14 +50,15 @@
         
         <div class="projects">
             <h1>this is projet1</h1>
-            <button class="addProjects">Add projects </button>
+            <input type="text" id="inputPorjectDescription" placeholder="add project description or title">
+            <button class="addProjects">click to add Add projects </button>
         </div>
         <div class="todos">
             <h1>Todos</h1>
-        <input type="text" id="title">
-        <input type="text" id="description">
-        <input type="number" id="dueDate">
-        <button class="addTodo">Add todo</button>
+        <input type="text" id="title" placeholder="add todo title">
+        <input type="text" id="description" placeholder="add todo description" >
+        <input type="number" id="dueDate"  placeholder="add todo dueDate">
+        <button class="addTodo">click to add todo</button>
         </div>
         
         

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // merge sort
+        let test = [4,6,2,7,1,8,9,0,0,0,1] // the result shoudl be [0, 0, 0, 1, 1, 2, 4, 6, 7, 8, 9]
+        let sortedArr = []
+    function mergeSort(arrToSort){
+        
+        for(let i = 0; i<arrToSort.length; i++){
+            if(arrToSort[i] > arrToSort[i+1]){
+            const tempV = arrToSort[i];
+            arrToSort[i] = arrToSort[i+1]
+            arrToSort[i+1] = tempV;
+            mergeSort(arrToSort)
+        }
+    }}
+
+
+    mergeSort(test)
+    console.log(test)
+
+
+
+
+
+        
+    </script>
+</body>
+</html>
